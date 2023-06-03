@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="https://purple.com" target="_blank"
+          ><img src="./companyLogo.jpg" alt="Company Logo" id="hdrLogo"
+        /></a>
+      </div>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="./index.html">About me</a></li>
+          <li><a href="./projectGallery.html">Gallery for projects</a></li>
+          <li><a href="./contactForm.html">Contact Form</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h1>Contact me</h1>
+        <div class="flexbox">
+          <div class="contactHdr">
+            Have questions? Please fill the contact form below and I'll get back
+            with you!
+          </div>
+        </div>
+        <div class="textMain flexbox">
+          <form action="submit">
+            <div class="flexbox flexbox-item floating-placeholder">
+              <label for="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                class="contactInput"
+              />
+            </div>
+            <div class="flexbox flexbox-item floating-placeholder">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="contactInput"
+              />
+            </div>
+            <div class="flexbox flexbox-item floating-placeholderv">
+              <label for="query">What's shakin' bacon</label>
+              <textarea name="query" id="query" cols="30" rows="10"></textarea>
+            </div>
+            <div class="flexbox flexbox-item">
+              <button type="submit" id="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="flexbox">
+        <div class="flexbox-item">
+          <h3>Products</h3>
+        </div>
+        <div class="flexbox-item">
+          <h3>Services</h3>
+        </div>
+        <div class="flexbox-item">
+          <h3>Reviews</h3>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
