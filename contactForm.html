@@ -34,27 +34,36 @@
         </div>
         <div class="textMain flexbox">
           <form action="submit">
-            <div class="flexbox flexbox-item floating-placeholder">
-              <label for="firstName">First Name</label>
+            <div class="flexbox flexbox-item input-container">
+              <!--floating-placeholder-->
+              <label for="firstName"></label>
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
-                class="contactInput"
+                required
+                placeholder="First Name"
               />
             </div>
-            <div class="flexbox flexbox-item floating-placeholder">
-              <label for="email">Email Address</label>
+            <div class="flexbox flexbox-item input-container">
+              <!--floating-placeholder-->
+              <label for="email"></label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                class="contactInput"
+                placeholder="Email Address"
               />
             </div>
-            <div class="flexbox flexbox-item floating-placeholderv">
-              <label for="query">What's shakin' bacon</label>
-              <textarea name="query" id="query" cols="30" rows="10"></textarea>
+            <div class="flexbox flexbox-item input-container">
+              <!--floating-placeholder-->
+              <label for="query"></label>
+              <input
+                type="text"
+                name="query"
+                id="query"
+                placeholder="What's shakin' bacon"
+              />
             </div>
             <div class="flexbox flexbox-item">
               <button type="submit" id="submit">Submit</button>

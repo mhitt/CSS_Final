@@ -1,12 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Gallery</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"></script> -->
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="https://purple.com" target="_blank"
+          ><img src="./companyLogo.jpg" alt="Company Logo" id="hdrLogo"
+        /></a>
+      </div>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="./index.html">About me</a></li>
+          <li><a href="./projectGallery.html">Gallery for projects</a></li>
+          <li><a href="./contactForm.html">Contact Form</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h1>Project Gallery</h1>
+
+        <div id="repo-container"></div>
+
+        <script>
+            // Fetch repositories using GitHub API
+            fetch('https://api.github.com/users/mhitt/repos')
+              .then(response => response.json())
+              .then(data => {
+                // Filter out only public repositories
+                const publicRepos = data.filter(repo => !repo.private);
+        
+                // Create HTML elements to display repository information
+                const repoContainer = document.getElementById('repo-container');
+                publicRepos.forEach(repo => {
+                  const repoCard = document.createElement('div');
+                  repoCard.className = 'repo-card';
+                  const repoName = document.createElement('h2');
+                  const repoLink = document.createElement('a'); // Create the anchor element
+                  repoLink.href = repo.html_url; // Set the href attribute to the repository URL
+                  repoLink.textContent = repo.name; // Set the text content of the anchor element
+                  repoName.appendChild(repoLink); // Append the anchor element to the h2 element
+                  const repoDescription = document.createElement('p');
+                  repoDescription.textContent = repo.description || 'No description available';
+                  const repoStars = document.createElement('p');
+                  repoStars.textContent = `Stars: ${repo.stargazers_count}`;
+                  const repoForks = document.createElement('p');
+                  repoForks.textContent = `Forks: ${repo.forks}`;
+        
+                  // Append elements to the container
+                  repoCard.appendChild(repoName);
+                  repoCard.appendChild(repoDescription);
+                  repoCard.appendChild(repoStars);
+                  repoCard.appendChild(repoForks);
+                  repoContainer.appendChild(repoCard);
+                });
+              })
+              .catch(error => {
+                console.error(error);
+              });
+          </script>
+
+        <!-- <div class="github-card" data-github="mhitt/DropboxLogin"></div> -->
+
+
+         <!-- <div class="flexbox">
+          <div class="contactHdr">
+            Projects are below
+          </div>
+        </div>
+        <div class="textMain flexbox">
+          <form action="submit">
+            <div class="flexbox flexbox-item input-container"> -->
+              <!--floating-placeholder-->
+              <!-- <label for="firstName"></label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                required
+                placeholder="First Name"
+              />
+            </div>
+            <div class="flexbox flexbox-item input-container"> -->
+              <!--floating-placeholder-->
+              <!-- <label for="email"></label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email Address"
+              />
+            </div>
+            <div class="flexbox flexbox-item input-container"> -->
+              <!--floating-placeholder-->
+              <!-- <label for="query"></label>
+              <input
+                type="text"
+                name="query"
+                id="query"
+                placeholder="What's shakin' bacon"
+              />
+            </div>
+            <div class="flexbox flexbox-item">
+              <button type="submit" id="submit">Submit</button>
+            </div>
+          </form>
+        </div>  -->
+      </section>
+    </main>
+
+    <footer>
+      <div class="flexbox">
+        <div class="flexbox-item">
+          <h3>Products</h3>
+        </div>
+        <div class="flexbox-item">
+          <h3>Services</h3>
+        </div>
+        <div class="flexbox-item">
+          <h3>Reviews</h3>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
