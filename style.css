@@ -102,7 +102,10 @@ h1 {
   align-items: center;
   font-size: 1rem;
   color: #1ba1ca;
-  width: 100%;
+  width: 90%;
+  padding-left: 50px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 #submit {
   height: 50px;
@@ -128,6 +131,8 @@ footer {
   margin: 0;
   padding: 0;
   color: aliceblue;
+  width: 100%;
+  overflow: hidden;
 }
 form {
   width: 500px;
@@ -152,7 +157,6 @@ form {
   font-size: 1rem;
   transition: border-bottom-color 0.3s;
 }
-
 .input-container input:focus {
   border-bottom-color: #8bc34a;
   outline: none;
@@ -187,17 +191,29 @@ form {
 .input-container input:focus + label {
   top: -20px;
 }
-  .repo-card {
-    width: 400px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  .repo-card h2 {
-    margin-top: 0;
-  }
-  .repo-card p {
-    margin-bottom: 0;
+.repo-card {
+  width: 400px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+      flex-direction: column;
+}
+.repo-card h2 {
+  margin-top: 0;
+}
+.repo-card p {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    /* Horizontal layout for desktop screens */
+    /* .repo-card {
+      flex-direction: column;
+    } */
+    .repo-card .repo-info {
+      flex: 1;
+      padding-left: 10px;
+    }
   }
 /* Optional: Add some animation */
 .input-container input:not(:placeholder-shown) + label {
